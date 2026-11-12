@@ -68,6 +68,7 @@ fun AppearanceScreen(
         Settings.PREF_THEME_COLORS,
         if (dayNightMode) Settings.PREF_THEME_COLORS_NIGHT else null,
         Settings.PREF_NAVBAR_COLOR,
+        Settings.PREF_OVERLAY_KEYBOARD,
         SettingsWithoutKey.BACKGROUND_IMAGE,
         SettingsWithoutKey.BACKGROUND_IMAGE_LANDSCAPE,
         R.string.settings_category_miscellaneous,
@@ -202,6 +203,9 @@ fun createAppearanceSettings(context: Context) = listOf(
     },
     Setting(context, Settings.PREF_NAVBAR_COLOR, R.string.theme_navbar, R.string.day_night_mode_summary) {
         SwitchPreference(it, Defaults.PREF_NAVBAR_COLOR)
+    },
+    Setting(context, Settings.PREF_OVERLAY_KEYBOARD, R.string.overlay_keyboard, R.string.overlay_keyboard_summary) {
+        SwitchPreference(it, Defaults.PREF_OVERLAY_KEYBOARD)
     },
     Setting(context, SettingsWithoutKey.BACKGROUND_IMAGE, R.string.customize_background_image) {
         BackgroundImagePref(it, false)

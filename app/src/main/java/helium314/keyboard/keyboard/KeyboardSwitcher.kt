@@ -256,6 +256,11 @@ class KeyboardSwitcher private constructor() {
         // Has to be subtracted after calculating touchableRegion
         visibleTopY -= latinIME.emojiSearchActivityHeight
 
+        // Overlay mode (like a floating keyboard): report no content/visible inset so the app is not
+        // resized or panned and stays visible through a translucent keyboard; touches still only
+        // hit the key area via touchableRegion set above.
+        if (Settings.getValues().mOverlayKeyboard)
+            visibleTopY = inputHeight
         outInsets.contentTopInsets = visibleTopY
         outInsets.visibleTopInsets = visibleTopY
         insetsUpdater.setInsets(outInsets, inputView.root)

@@ -124,6 +124,7 @@ public class SettingsValues {
     public final boolean mUseContactsDictionary;
     public final boolean mUseAppsDictionary;
     public final boolean mCustomNavBarColor;
+    public final boolean mOverlayKeyboard;
     public final float mKeyboardHeightScale;
     public final float mBottomRowScale;
     public final boolean mUrlDetectionEnabled;
@@ -312,6 +313,7 @@ public class SettingsValues {
         mUseContactsDictionary = SettingsValues.readUseContactsEnabled(prefs, context);
         mUseAppsDictionary = prefs.getBoolean(Settings.PREF_USE_APPS, Defaults.PREF_USE_APPS);
         mCustomNavBarColor = prefs.getBoolean(Settings.PREF_NAVBAR_COLOR, Defaults.PREF_NAVBAR_COLOR);
+        mOverlayKeyboard = prefs.getBoolean(Settings.PREF_OVERLAY_KEYBOARD, Defaults.PREF_OVERLAY_KEYBOARD);
         mKeyGapScale = Settings.readKeyGapScale(prefs, isLandscape, isFolded);
         mSettingsValuesForSuggestion = new SettingsValuesForSuggestion(
                 mBlockPotentiallyOffensive,

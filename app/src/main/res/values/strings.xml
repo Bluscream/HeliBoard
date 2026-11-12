@@ -727,6 +727,8 @@ New dictionary:
     <string name="day_night_mode_summary">Appearance will follow system settings</string>
     <!-- Option for setting navbar to follow keyboard color -->
     <string name="theme_navbar">Color navigation bar</string>
+    <string name="overlay_keyboard">Overlay keyboard, don\'t resize app</string>
+    <string name="overlay_keyboard_summary">The app keeps its full height and shows through a transparent keyboard background. The focused text field may end up under the keyboard.</string>
     <!-- Theme name for light theme -->
     <string name="theme_name_light" tools:keep="@string/theme_name_light">Light</string>
     <!-- Theme name for holo white theme -->
