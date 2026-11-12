@@ -31,7 +31,7 @@ object KeyCode {
     const val FN_LOCK =                       -6
     const val DELETE =                        -7
     const val DELETE_WORD =                   -8
-    //const val FORWARD_DELETE =                -9
+    const val FORWARD_DELETE =                -9
     //const val FORWARD_DELETE_WORD =          -10
     const val SHIFT =                        -11
     const val CAPS_LOCK =                    -13
@@ -184,6 +184,11 @@ object KeyCode {
     const val BACKGROUND_GATHERING =         -10052 // will be useless after removal of gesture data gathering (keep for compatibility)
     const val BACKGROUND_GATHERING_TEMP_OFF =-10053 // will be useless after removal of gesture data gathering (keep for compatibility)
     const val DPAD =                      -10054
+    const val DPAD_CENTER =               -10055
+    const val SYSRQ =                     -10056
+    const val SCROLL_LOCK =               -10057
+    const val BREAK =                     -10058
+    const val NUM_LOCK =                  -10059
 
     // Valid in popups and for toolbar key long press only
     const val KEY_REPEAT =                -11000
@@ -212,6 +217,7 @@ object KeyCode {
         TIMESTAMP, CTRL_LEFT, CTRL_RIGHT, ALT_LEFT, ALT_RIGHT, META_LEFT, META_RIGHT, SEND_INTENT_ONE, SEND_INTENT_TWO,
         SEND_INTENT_THREE, EMOJI_SEARCH, INLINE_EMOJI_SEARCH_DONE, META_LOCK,
         BACKGROUND_GATHERING, BACKGROUND_GATHERING_TEMP_OFF, DPAD,
+        FORWARD_DELETE, DPAD_CENTER, SYSRQ, SCROLL_LOCK, BREAK, NUM_LOCK,
         -> this
 
         KEY_REPEAT if (longPress) -> this
@@ -271,6 +277,12 @@ object KeyCode {
         F10 -> KeyEvent.KEYCODE_F10
         F11 -> KeyEvent.KEYCODE_F11
         F12 -> KeyEvent.KEYCODE_F12
+        FORWARD_DELETE -> KeyEvent.KEYCODE_FORWARD_DEL
+        DPAD_CENTER -> KeyEvent.KEYCODE_DPAD_CENTER
+        SYSRQ -> KeyEvent.KEYCODE_SYSRQ
+        SCROLL_LOCK -> KeyEvent.KEYCODE_SCROLL_LOCK
+        BREAK -> KeyEvent.KEYCODE_BREAK
+        NUM_LOCK -> KeyEvent.KEYCODE_NUM_LOCK
         else -> if (keyCode < 0) KeyEvent.KEYCODE_UNKNOWN else keyCode
     }
 
