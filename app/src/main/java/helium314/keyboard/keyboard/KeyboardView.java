@@ -61,6 +61,8 @@ public class KeyboardView extends View {
     // Optional glow around key labels and hints (hidden prefs, see PREF_KEY_TEXT_GLOW_*), 0 = off
     private final float mKeyTextGlowRadius;
     private final int mKeyTextGlowColor;
+    private final boolean mKeyTextBold;
+    public static final String PREF_KEY_TEXT_BOLD = "key_text_bold";
     public static final String PREF_KEY_TEXT_GLOW_RADIUS = "key_text_glow_radius_dp";
     public static final String PREF_KEY_TEXT_GLOW_COLOR = "key_text_glow_color";
     private final float mVerticalCorrection;
@@ -147,6 +149,7 @@ public class KeyboardView extends View {
         mKeyTextGlowRadius = glowPrefs.getInt(PREF_KEY_TEXT_GLOW_RADIUS, 0)
                 * context.getResources().getDisplayMetrics().density;
         mKeyTextGlowColor = glowPrefs.getInt(PREF_KEY_TEXT_GLOW_COLOR, 0xFF33B5E5);
+        mKeyTextBold = glowPrefs.getBoolean(PREF_KEY_TEXT_BOLD, false);
         mVerticalCorrection = keyboardViewAttr.getDimension(
                 R.styleable.KeyboardView_verticalCorrection, 0.0f);
         keyboardViewAttr.recycle();
@@ -401,7 +404,8 @@ public class KeyboardView extends View {
         float labelBaseline = centerY;
         final String label = key.getLabel();
         if (label != null) {
-            paint.setTypeface(KeyboardTypeface.resolve(label, key.selectTypeface(params)));
+            final Typeface labelTypeface = KeyboardTypeface.resolve(label, key.selectTypeface(params));
+            paint.setTypeface(mKeyTextBold ? Typeface.create(labelTypeface, Typeface.BOLD) : labelTypeface);
             paint.setTextSize(key.selectTextSize(params) * mFontSizeMultiplier);
             final float labelCharHeight = TypefaceUtils.getReferenceCharHeight(paint);
             final float labelCharWidth = TypefaceUtils.getReferenceCharWidth(paint);
