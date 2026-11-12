@@ -1,3 +1,13 @@
+> [!NOTE]
+> **Bluscream fork, branch `hk-overlay`:** a personal HeliBoard build with an opt-in overlay mode
+> (Appearance → "Overlay keyboard, don't resize app"), optional glowing and bold key labels, and key codes
+> for Forward-Del, D-pad centre, SysRq, ScrollLock, Break and NumLock. It is not affiliated with or supported by
+> the HeliBoard team. **APK and install/switching notes:**
+> [release `hk-overlay-1`](https://github.com/Bluscream/HeliBoard/releases/tag/hk-overlay-1).
+> **Hacker's Keyboard layouts and settings backup for HeliBoard:**
+> [heliboard-hackerskeyboard-layout](https://github.com/Bluscream/heliboard-hackerskeyboard-layout).
+> **Hacker's Keyboard fork:** [releases](https://github.com/Bluscream/hackerskeyboard/releases).
+
 # HeliBoard
 HeliBoard is a privacy-conscious and customizable open-source keyboard, based on AOSP / OpenBoard.
 Does not use internet permission, and thus is 100% offline.
